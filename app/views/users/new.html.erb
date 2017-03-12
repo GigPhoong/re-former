@@ -1,0 +1,48 @@
+<h1>Sign up page</h1>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%=f.label :username%>
+    <%=f.text_field :username%>
+  </div>
+  <div>
+    <%=f.label :email%>
+    <%=f.text_field :email%>
+  </div>
+  <div>
+    <%=f.label :password%>
+    <%=f.password_field :password%>
+  </div>
+  <div>
+    <%=f.submit%>
+  </div>
+<% end %>
+
+<!--
+<%= form_tag('/users', method: :post) do %>
+  <div>
+    <%= label_tag(:username, "Username:") %>
+    <%= text_field_tag(:username) %>
+  </div>
+  <div>
+    <%= label_tag(:email, "Email:") %>
+    <%= text_field_tag(:email) %>
+  </div>
+  <div>
+    <%= label_tag(:password, "Password:") %>
+    <%= password_field_tag(:password) %>
+  </div>
+  <div>
+    <%= submit_tag("Submit") %>
+  </div>
+<% end -%>
+
+
+<form accept-charset="UTF-8" action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  Username: <input type="text" name="user[username]"><br>
+  Email: <input type="text" name="user[email]"><br>
+  Password: <input type="password" name="user[password]"><br>
+  <input type="submit" value="Submit">
+</form>
+-->
